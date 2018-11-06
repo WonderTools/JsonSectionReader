@@ -1,0 +1,9 @@
+{
+  "firstNode": {
+    "secondNode": [ 1, 2, 3, 4, 5 ],
+    "forthNode" : {
+      "alphabets": "abc",
+      "numbers" : "1234" 
+    }
+  }
+}
