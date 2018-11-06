@@ -9,11 +9,6 @@ namespace JsonReader
 {
     public class WtJsonReader
     {
-        private Exception Exception(string message)
-        {
-            return new Exception(message);
-        }
-
         private Stream CreateStream(string fileName)
         {
             var assemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
@@ -65,19 +60,5 @@ namespace JsonReader
                 }
             }
         }
-
-        //As Object
-        //As intOrDefault
-        //As float
-        //As bool
-        //As Date
-        //As double
-        //as char
-        //as byte
-        //as long
-        //as decimal
-        //As Ulong
-        //OrDefault
-        //OrNull
     }
 }

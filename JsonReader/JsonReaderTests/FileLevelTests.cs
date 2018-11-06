@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using JsonReader;
 using JsonReader.Exceptions;
 using NUnit.Framework;
@@ -33,5 +34,60 @@ namespace JsonReaderTests
             Assert.AreEqual(errorMessage,
                 exception.Message);
         }
+    }
+
+    public class Good
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
+
+    public enum MyState
+    {
+        One,
+        Tex,
+    }
+
+    [TestFixture]
+    public class DataTests
+    {
+        [Test]
+        public void Test()
+        {
+            var reader = new WtJsonReader();
+            var actual = reader.Read("BasicData.json", "tableData").GetTable(typeof(int), typeof(string), typeof(int), typeof(Good), typeof(int[]), typeof(MyState));
+            int i = 0;
+            
+        }
+
+
+        //[Test]
+        //public void LongDataTest()
+        //{
+        //    long data = 4294967296;
+        //    var reader = new WtJsonReader();
+        //    var actual = reader.Read("BasicData.json", "longData").AsLong();
+        //    Assert.AreEqual(data, actual,"The value is "+data);
+        //}
+
+        //[Test]
+        //public void StringDataTest()
+        //{
+        //    string data = "This is great";
+        //    var reader = new WtJsonReader();
+        //    var actual = reader.Read("BasicData.json", "stringData").AsString();
+        //    Assert.AreEqual(data, actual, "The value is " + data);
+        //}
+
+        //[Test]
+        //public void IntDataAsStringTest()
+        //{
+        //    var data = 5432;
+        //    var reader = new WtJsonReader();
+        //    var actual = reader.Read("BasicData.json", "intDataAsString").AsInt();
+        //    Assert.AreEqual(data, actual);
+        //}
+
+
     }
 }
