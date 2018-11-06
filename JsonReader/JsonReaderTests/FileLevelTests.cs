@@ -8,15 +8,18 @@ namespace JsonReaderTests
     [TestFixture]
     public class FileLevelTests
     {
-        [Test]
-        public void InvalidFileTests()
+        [TestCase("InvalidFile.json", typeof(EmbeddedResourceNotFoundException), 
+            "No embedded resource with name ending with InvalidFile.json was found")]
+        [TestCase("Test.json", typeof(MultipleResourceFoundException),
+            "Multiple file with name Test.json found : JsonReaderTests.Folder.Test.json,JsonReaderTests.Test.json")]
+        public void InvalidFileTests(string fileName, Type exceptionType, string errorMessage)
         {
             Exception TestFunction()
             {
                 try
                 {
                     var reader = new WtJsonReader();
-                    reader.Read("InvalidFile.json");
+                    reader.Read(fileName);
                 }
                 catch (Exception e)
                 {
@@ -26,8 +29,8 @@ namespace JsonReaderTests
             }
 
             var exception = TestFunction();
-            Assert.AreEqual(typeof(EmbeddedResourceNotFoundException), exception.GetType());
-            Assert.AreEqual("No embedded resource with name ending with InvalidFile.json was found",
+            Assert.AreEqual(exceptionType, exception.GetType());
+            Assert.AreEqual(errorMessage,
                 exception.Message);
         }
     }

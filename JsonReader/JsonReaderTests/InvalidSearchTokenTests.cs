@@ -1,11 +1,10 @@
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using JsonReader;
 using JsonReader.Exceptions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
+using System;
+using System.Collections.Generic;
 
 namespace JsonReaderTests
 {

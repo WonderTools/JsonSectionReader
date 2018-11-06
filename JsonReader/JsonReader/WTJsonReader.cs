@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using JsonReader.Exceptions;
@@ -21,9 +22,9 @@ namespace JsonReader
                 .Select(asm => asm.GetManifestResourceNames()
                     .Where(name => name.EndsWith(fileName))).ToList();
             var names = listOfList.SelectMany(x => x, (c, s) => s).ToList();
+            names.Sort();
 
-            if (names.Count > 1) throw Exception("Multiple resources were identified with the file name :"+
-                                                 string.Join(", ", names));
+            if (names.Count > 1) throw new MultipleResourceFoundException(fileName, string.Join(",",names));
             if (names.Count == 0) throw new EmbeddedResourceNotFoundException(fileName);
 
             var fullFileName = names[0];
