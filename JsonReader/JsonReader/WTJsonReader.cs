@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace JsonReader
 {
-    public class JsonReader
+    public class WtJsonReader
     {
         private Exception Exception(string message)
         {
@@ -24,7 +24,7 @@ namespace JsonReader
 
             if (names.Count > 1) throw Exception("Multiple resources were identified with the file name :"+
                                                  string.Join(", ", names));
-            if (names.Count == 0) throw Exception("No resource was identified with the file name");
+            if (names.Count == 0) throw new EmbeddedResourceNotFoundException(fileName);
 
             var fullFileName = names[0];
             var assembly = assemblies.First(x => x.GetManifestResourceNames().Any(y => y.EndsWith(fileName)));
@@ -45,7 +45,9 @@ namespace JsonReader
                         var token = tokens[index];
                         if (token is string x)
                         {
-                            if((obj is JObject jObject) && (!jObject.ContainsKey(x)))
+                            if (!(obj is JObject jObject))
+                                throw new FilterTokenPropertyNotFoundException(x, index);
+                            if(!jObject.ContainsKey(x))
                                 throw new FilterTokenPropertyNotFoundException(x, index);
                             obj = obj[x];
                         }
@@ -60,20 +62,6 @@ namespace JsonReader
 
                     return new JsonSegment(obj);
                 }
-            }
-        }
-
-        public class JsonSegment
-        {
-            private readonly JToken _token;
-            public JsonSegment(JToken token)
-            {
-                _token = token;
-            }
-
-            public int AsIntOrDefault()
-            {
-                return _token.Value<int>();
             }
         }
 

@@ -10,7 +10,7 @@ using NUnit.Framework.Internal;
 namespace JsonReaderTests
 {
     [TestFixture()]
-    public class UnitTest1
+    public class InvalidSearchTokenTests
     {
         [TestCaseSource(nameof(GetTestCases))]
         public void ExceptionTest(Type exceptionType, string expectedError, params object[] tokens)
@@ -19,7 +19,7 @@ namespace JsonReaderTests
             {
                 try
                 {
-                    var reader = new JsonReader.JsonReader();
+                    var reader = new WtJsonReader();
                     reader.Read("TestData.json", tokens);
                 }
                 catch (Exception e)
@@ -34,6 +34,7 @@ namespace JsonReaderTests
             Assert.AreEqual(expectedError, exception.Message);
         }
 
+       
         public static IEnumerable<TestCaseData> GetTestCases()
         {
             yield return new TestCaseData(
@@ -65,13 +66,19 @@ namespace JsonReaderTests
                     "Token 0 at the index 1 caused array out of bound",
                     new object[] { "firstNode", 0 })
                 .SetName("5- Accessing by Array subscript in object");
-        }
 
-        //Accessing non array by array subscript
+            yield return new TestCaseData(
+                    typeof(FilterTokenPropertyNotFoundException),
+                    "Token thirdNode at the index 2 caused property not found",
+                    new object[] { "firstNode", "secondNode", "thirdNode" })
+                .SetName("6- Array out of bound");
+        }
+    }
+
+    //Accessing non array by array subscript
         //Accessing non object by object subscript
         //Accessing object by wrong subscript
         //File not found
         //Multiple file found
         //Invalid Json file
-    }
 }
