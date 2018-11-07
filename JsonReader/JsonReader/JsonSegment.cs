@@ -37,7 +37,7 @@ namespace JsonReader
 
         private object GetData(JToken jToken, Type type)
         {
-            if (type.IsClass)
+            if (type.IsClass || type.IsEnum)
                 return GetData(jToken, type, nameof(GetObjectBasedOnType));
             else
                 return GetData(jToken, type, nameof(GetValueBasedOnType));

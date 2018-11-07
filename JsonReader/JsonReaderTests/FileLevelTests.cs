@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using JsonReader;
 using JsonReader.Exceptions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using NUnit.Framework;
 
 namespace JsonReaderTests
@@ -40,6 +42,9 @@ namespace JsonReaderTests
     {
         public string Name { get; set; }
         public int Age { get; set; }
+
+        public MyState MyState { get; set; }
+
     }
 
     public enum MyState
@@ -57,7 +62,17 @@ namespace JsonReaderTests
             var reader = new WtJsonReader();
             var actual = reader.Read("BasicData.json", "tableData").GetTable(typeof(int), typeof(string), typeof(int), typeof(Good), typeof(int[]), typeof(MyState));
             int i = 0;
-            
+
+            //Good good = new Good()
+            //{
+            //    Name = "one",
+            //    Age = 34,
+            //    MyState = MyState.One,
+            //};
+
+            //var serializeObject = JsonConvert.SerializeObject(good, new StringEnumConverter());
+            //int i = 0;
+
         }
 
 
