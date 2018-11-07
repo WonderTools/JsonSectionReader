@@ -3,12 +3,12 @@
   "stringData": "This is great",
   "intDataAsString": "5432",
   "tableData": [
-    [1, "string1", 32433, { "name": "john", "age": 30 }, [12, 3, 4], "One"],
-    [2, "string2", 32433, { "name": "john", "age": 30 }, [12, 3, 4], "One"],
-    [3, "string3", 32433, { "name": "john", "age": 30 }, [12, 3, 4], "One"],
-    [4, "string4", 32433 , {"name" :  "john", "age" :  30 },[12,3,4], "One"],
-    [5, "string5", 32433 , {"name" :  "john", "age" :  30 },[12,3,4], "One"],
-    [6, "string6", 32433 , {"name" :  "john", "age" :  30 },[12,3,4], "One"],
-    [7, "string7", 32433 , {"name" :  "john", "age" :  30 },[12,3,4], "One"]
+    [1, "string1", 322],
+    [2, "string2", 32433],
+    [3, "string3", 32433],
+    [4, "string4", 32433],
+    [5, "string5", 32433],
+    [6, "string6", 32433],
+    [7, "string7", 32433]
   ] 
 }
