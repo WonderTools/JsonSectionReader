@@ -19,9 +19,15 @@ namespace JsonReaderTests
             actual.Should().BeEquivalentTo(expected);
         }
 
+        public static List<object> List(params object[] objs)
+        {
+            return objs.ToList();
+        }
+
         public static IEnumerable<TestCaseData> GetTestCaseData()
         {
             yield return GetTestCase(BasicData);
+            yield return GetTestCase(NullableValueInData);
         }
 
         private static TestCaseData GetTestCase(Func<IEnumerable<object>> method)
@@ -49,10 +55,19 @@ namespace JsonReaderTests
             };
         }
 
-        public static List<object> List(params object[] objs)
+        private static IEnumerable<object> NullableValueInData()
         {
-            return objs.ToList();
+            yield return "nullableValueInData";
+            yield return new[] { typeof(int), typeof(string), typeof(int?) };
+            yield return new List<List<object>>
+            {
+                List(1, "string1", 322),
+                List(2, "string2", null),
+                List(3, "string3", 32433)
+            };
         }
+
+
 
         //Table test with Int? and string
         //Table test with Enum int and string
