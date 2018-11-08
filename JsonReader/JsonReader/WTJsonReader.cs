@@ -35,7 +35,7 @@ namespace JsonReader
                 using (var reader = new StreamReader(stream))
                 {
                     var text = reader.ReadToEnd();
-                    JToken obj = JObject.Parse(text);
+                    JToken obj = JObject.Parse(text, new JsonLoadSettings());
                     for (var index = 0; index < tokens.Length; index++)
                     {
                         var token = tokens[index];
