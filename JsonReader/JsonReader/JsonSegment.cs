@@ -19,16 +19,25 @@ namespace JsonReader
             var jArray = _token as JArray;
             if (jArray == null) throw new TableNotFoundException();
             List<List<object>> result = new List<List<object>>();
-            foreach (var jToken in jArray)
+            for (var i = 0; i < jArray.Count; i++)
             {
+                var jToken = jArray[i];
                 var jSecondArray = jToken as JArray;
-                if(jSecondArray == null) throw new Exception("Table Content mismatch");
-                if(types.Length != jSecondArray.Count) throw new Exception("Table size mismatch");
+                if (jSecondArray == null) throw new Exception("Table Content mismatch");
+                if (types.Length != jSecondArray.Count) throw new Exception("Table size mismatch");
                 List<object> resultRow = new List<object>();
-                for (int i = 0; i < types.Length; i++)
+                for (int j = 0; j < types.Length; j++)
                 {
-                    resultRow.Add(GetData(jSecondArray[i], types[i]));
+                    try
+                    {
+                        resultRow.Add(GetData(jSecondArray[j], types[j]));
+                    }
+                    catch (Exception e)
+                    {
+                        throw new UnableToGetDataExcpetion(i, j, jToken.ToString(), types[i].Name, e);
+                    }
                 }
+
                 result.Add(resultRow);
             }
 
