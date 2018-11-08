@@ -31,6 +31,7 @@ namespace JsonReaderTests
             yield return GetTestCase(DateInTable);
             yield return GetTestCase(EnumInTable);
             yield return GetTestCase(ListInTable);
+            yield return GetTestCase(ObjectInTable);
         }
 
         private static TestCaseData GetTestCase(Func<IEnumerable<object>> method)
@@ -117,7 +118,25 @@ namespace JsonReaderTests
             Saturday,
             Sunday
         }
-        
+
+        private static IEnumerable<object> ObjectInTable()
+        {
+            yield return "objectInTable";
+            yield return new[] { typeof(Person), typeof(string), typeof(int) };
+            yield return new List<List<object>>
+            {
+                List(new Person(){Name = "John", Age = 39 }, "string1", 322),
+                List(new Person(){Name = "Eric", Age = 22 }, "string2", 834),
+                List(new Person(){Name = "Mark", Age = 37 }, "string3", 32433)
+            };
+        }
+
+        public class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        }
+
         //Table test objects
         //table test with list object
     }

@@ -27,5 +27,10 @@
     [ [12,3,4,5], "string1", 322 ],
     [ [], "string2", 834 ],
     [ [4,5], "string3", 32433 ]
+  ],
+  "objectInTable": [
+    [ {"name" : "John", "age" :  39 }, "string1", 322 ],
+    [ {"name" : "Eric", "age" :  22 }, "string2", 834 ],
+    [ {"name" : "Mark", "age" :  37 }, "string3", 32433 ]
   ]
 }
