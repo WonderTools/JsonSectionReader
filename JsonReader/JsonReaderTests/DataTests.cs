@@ -39,16 +39,21 @@ namespace JsonReaderTests
             yield return new[] {typeof(int), typeof(string), typeof(int)};
             yield return new List<List<object>>
             {
-                new List<object>(){1, "string1", 322},
-                new List<object>(){2, "string2", 32433},
-                new List<object>(){3, "string3", 32433},
-                new List<object>(){4, "string4", 32433},
-                new List<object>(){5, "string5", 32433},
-                new List<object>(){6, "string6", 32433},
-                new List<object>(){7, "string7", 32433}
+                List(1, "string1", 322),
+                List(2, "string2", 32433),
+                List(3, "string3", 32433),
+                List(4, "string4", 32433),
+                List(5, "string5", 32433),
+                List(6, "string6", 32433),
+                List(7, "string7", 32433)
             };
         }
-        
+
+        public static List<object> List(params object[] objs)
+        {
+            return objs.ToList();
+        }
+
         //Table test with Int? and string
         //Table test with Enum int and string
         //Table test objects
