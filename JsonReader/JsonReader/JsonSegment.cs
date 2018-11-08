@@ -24,7 +24,7 @@ namespace JsonReader
                 var jToken = jArray[i];
                 var jSecondArray = jToken as JArray;
                 if (jSecondArray == null) throw new ImproperRowInTableException(i);
-                if (types.Length != jSecondArray.Count) throw new Exception("Table size mismatch");
+                if (types.Length != jSecondArray.Count) throw new ImproperRowInTableException(i, types.Length, jSecondArray.Count);
                 List<object> resultRow = new List<object>();
                 for (int j = 0; j < types.Length; j++)
                 {

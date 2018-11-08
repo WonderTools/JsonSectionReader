@@ -3,6 +3,15 @@
   "invalidRow": [
     [ 4, 5 ],
     4,
-    [3,4]
-  ]
+    [ 3, 4 ]
+  ],
+  "invalidRow1": [
+    [ 4, 5 ],
+    [ 4, 5, 6 ],
+    [ 3, 4 ]
+  ],
+  "wrongDataType": [
+    [ 4, 5 ],
+    [1,"hello this is wrong"]
+  ] 
 }

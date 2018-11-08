@@ -8,8 +8,18 @@ namespace JsonReaderTests
     [TestFixture]
     public class TableAccessErrorTests
     {
-        [TestCase("invalidTable", typeof(TableNotFoundException), "Table not found at the specified path", typeof(int))]
-        [TestCase("invalidRow",   typeof(ImproperRowInTableException), "Improper row at 1 (row number) in table exception", typeof(int), typeof(int))]
+        [TestCase("invalidTable", typeof(TableNotFoundException),
+            "Table not found at the specified path", typeof(int))]
+
+        [TestCase("invalidRow", typeof(ImproperRowInTableException), 
+            "Improper row at 1 (row number) in table exception", typeof(int), typeof(int))]
+
+        [TestCase("invalidRow1", typeof(ImproperRowInTableException), 
+            "Row 1 (row number) is having 3 elemented, but expected 2", typeof(int), typeof(int))]
+
+        [TestCase("wrongDataType", typeof(UnableToGetDataExcpetion),
+            "Row 1 (row number) is having 3 elemented, but expected 2", typeof(int), typeof(int))]
+
         public void Tests(string segment, Type exceptionType, string errorMessage, params Type[] tableTypes)
         {
             Exception GetExceptionInTable()
