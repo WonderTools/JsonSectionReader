@@ -18,7 +18,7 @@ namespace JsonReaderTests
             "Row 1 (row number) is having 3 elemented, but expected 2", typeof(int), typeof(int))]
 
         [TestCase("wrongDataType", typeof(UnableToGetDataExcpetion),
-            "Row 1 (row number) is having 3 elemented, but expected 2", typeof(int), typeof(int))]
+            "Unable to read data in column 1 row 1. Unable to read [  1,  \"hello this is wrong\"] as Int32", typeof(int), typeof(int))]
 
         public void Tests(string segment, Type exceptionType, string errorMessage, params Type[] tableTypes)
         {
