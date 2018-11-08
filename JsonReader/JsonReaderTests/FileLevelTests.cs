@@ -16,21 +16,7 @@ namespace JsonReaderTests
             "Multiple file with name Test.json found : JsonReaderTests.Folder.Test.json,JsonReaderTests.Test.json")]
         public void InvalidFileTests(string fileName, Type exceptionType, string errorMessage)
         {
-            Exception TestFunction()
-            {
-                try
-                {
-                    var reader = new WtJsonReader();
-                    reader.Read(fileName);
-                }
-                catch (Exception e)
-                {
-                    return e;
-                }
-                throw new Exception();
-            }
-
-            var exception = TestFunction();
+            var exception = Test.GetExceptionAttemptingToGetJsonSegment(fileName);
             Assert.AreEqual(exceptionType, exception.GetType());
             Assert.AreEqual(errorMessage,
                 exception.Message);

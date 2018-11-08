@@ -1,5 +1,3 @@
-
-using JsonReader;
 using JsonReader.Exceptions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
@@ -14,21 +12,7 @@ namespace JsonReaderTests
         [TestCaseSource(nameof(GetTestCases))]
         public void ExceptionTest(Type exceptionType, string expectedError, params object[] tokens)
         {
-            Exception TestFunction()
-            {
-                try
-                {
-                    var reader = new WtJsonReader();
-                    reader.Read("TestData.json", tokens);
-                }
-                catch (Exception e)
-                {
-                    return e;
-                }
-                throw new Exception();
-            }
-
-            var exception = TestFunction();
+            var exception = Test.GetExceptionAttemptingToGetJsonSegment("TestData.json", tokens);
             Assert.AreEqual(exceptionType, exception.GetType());
             Assert.AreEqual(expectedError, exception.Message);
         }
