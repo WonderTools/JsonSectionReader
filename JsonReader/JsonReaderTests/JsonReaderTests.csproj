@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="BasicData.json" />
+    <None Remove="DataTests.json" />
     <None Remove="Folder\Test.json" />
     <None Remove="Test.json" />
     <None Remove="TestData.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="BasicData.json" />
+    <EmbeddedResource Include="DataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
     <EmbeddedResource Include="Test.json" />
     <EmbeddedResource Include="TestData.json" />

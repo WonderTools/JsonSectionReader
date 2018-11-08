@@ -14,7 +14,7 @@ namespace JsonReaderTests
         public void Test(string searchPath , Type[] tableTypes, List<List<object>> expected)
         {
             var reader = new WtJsonReader();
-            var actual = reader.Read("BasicData.json", searchPath)
+            var actual = reader.Read("DataTests.json", searchPath)
                 .GetTable(tableTypes);
             actual.Should().BeEquivalentTo(expected);
         }
@@ -35,7 +35,7 @@ namespace JsonReaderTests
 
         private static IEnumerable<object> BasicData()
         {
-            yield return "tableData";
+            yield return "basicData";
             yield return new[] {typeof(int), typeof(string), typeof(int)};
             yield return new List<List<object>>
             {
@@ -48,8 +48,7 @@ namespace JsonReaderTests
                 new List<object>(){7, "string7", 32433}
             };
         }
-
-        //Table test with Int and string
+        
         //Table test with Int? and string
         //Table test with Enum int and string
         //Table test objects

@@ -1,8 +1,5 @@
 {
-  "longData": 4294967296,
-  "stringData": "This is great",
-  "intDataAsString": "5432",
-  "tableData": [
+  "basicData": [
     [1, "string1", 322],
     [2, "string2", 32433],
     [3, "string3", 32433],
