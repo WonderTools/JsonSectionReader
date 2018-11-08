@@ -1,0 +1,8 @@
+{
+  "invalidTable": 42,
+  "invalidRow": [
+    [ 4, 5 ],
+    4,
+    [3,4]
+  ]
+}

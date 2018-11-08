@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="DataTests.json" />
     <None Remove="Folder\Test.json" />
+    <None Remove="TableAccessErrorTests.json" />
     <None Remove="Test.json" />
     <None Remove="TestData.json" />
   </ItemGroup>
@@ -16,6 +17,7 @@
   <ItemGroup>
     <EmbeddedResource Include="DataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
+    <EmbeddedResource Include="TableAccessErrorTests.json" />
     <EmbeddedResource Include="Test.json" />
     <EmbeddedResource Include="TestData.json" />
   </ItemGroup>

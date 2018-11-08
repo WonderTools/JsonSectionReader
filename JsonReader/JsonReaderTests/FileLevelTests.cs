@@ -10,7 +10,7 @@ namespace JsonReaderTests
     [TestFixture]
     public class FileLevelTests
     {
-        [TestCase("InvalidFile.json", typeof(EmbeddedResourceNotFoundException), 
+        [TestCase("InvalidFile.json", typeof(EmbeddedResourceNotFoundException),
             "No embedded resource with name ending with InvalidFile.json was found")]
         [TestCase("Test.json", typeof(MultipleResourceFoundException),
             "Multiple file with name Test.json found : JsonReaderTests.Folder.Test.json,JsonReaderTests.Test.json")]
