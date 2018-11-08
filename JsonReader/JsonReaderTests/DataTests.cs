@@ -30,6 +30,7 @@ namespace JsonReaderTests
             yield return GetTestCase(NullableValueInData);
             yield return GetTestCase(DateInTable);
             yield return GetTestCase(EnumInTable);
+            yield return GetTestCase(ListInTable);
         }
 
         private static TestCaseData GetTestCase(Func<IEnumerable<object>> method)
@@ -94,6 +95,18 @@ namespace JsonReaderTests
             };
         }
 
+        private static IEnumerable<object> ListInTable()
+        {
+            yield return "listInTable";
+            yield return new[] { typeof(List<int>), typeof(string), typeof(int) };
+            yield return new List<List<object>>
+            {
+                List(List(12,3,4,5), "string1", 322),
+                List(List(), "string2", 834),
+                List(List(4,5), "string3", 32433)
+            };
+        }
+
         public enum DayOfTheWeek
         {
             Monday,
@@ -104,11 +117,8 @@ namespace JsonReaderTests
             Saturday,
             Sunday
         }
-
-
-        //Table test with Enum int and string
+        
         //Table test objects
-        //Table tests List of int
         //table test with list object
     }
 }

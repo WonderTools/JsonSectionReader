@@ -1,27 +1,31 @@
 {
   "basicData": [
-    [ 1, "string1", 322 ],
-    [ 2, "string2", 32433 ],
-    [ 3, "string3", 32433 ],
-    [ 4, "string4", 32433 ],
-    [ 5, "string5", 32433 ],
-    [ 6, "string6", 32433 ],
-    [ 7, "string7", 32433 ]
+    [1, "string1", 322],
+    [2, "string2", 32433],
+    [3, "string3", 32433],
+    [4, "string4", 32433],
+    [5, "string5", 32433],
+    [6, "string6", 32433],
+    [7, "string7", 32433]
   ],
   "nullableValueInData": [
-    [ 1, "string1", 322 ],
-    [ 2, "string2", null ],
-    [ 3, "string3", 32433 ]
+    [1, "string1", 322],
+    [2, "string2", null],
+    [3, "string3", 32433]
   ],
   "dateValueInTable": [
-    [ "3-13-2017", "string1", 322 ],
-    [ "3-15-2017", "string2", 834 ],
-    [ "3-14-2017", "string3", 32433 ]
+    ["3-13-2017", "string1", 322],
+    ["3-15-2017", "string2", 834],
+    ["3-14-2017", "string3", 32433]
   ],
   "enumValueInTable": [
-    [ "monday", "string1", 322 ],
-    [ "Thursday", "string2", 834 ],
-    [ "Sunday", "string3", 32433 ]
+    ["monday", "string1", 322],
+    ["Thursday", "string2", 834],
+    ["Sunday", "string3", 32433]
+  ],
+  "listInTable": [
+    [ [12,3,4,5], "string1", 322 ],
+    [ [], "string2", 834 ],
+    [ [4,5], "string3", 32433 ]
   ]
-
 }
