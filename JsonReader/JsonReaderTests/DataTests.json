@@ -32,5 +32,10 @@
     [ {"name" : "John", "age" :  39 }, "string1", 322 ],
     [ {"name" : "Eric", "age" :  22 }, "string2", 834 ],
     [ {"name" : "Mark", "age" :  37 }, "string3", 32433 ]
+  ],
+  "objectListInTable": [
+    [ [{"name" : "John", "age" :  39 }, {"name" : "Eric", "age" :  22 }], "string1", 322 ],
+    [ [], "string2", 834 ],
+    [ [{"name" : "Mark", "age" :  37 }], "string3", 32433 ]
   ]
 }
