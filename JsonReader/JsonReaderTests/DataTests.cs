@@ -28,6 +28,7 @@ namespace JsonReaderTests
         {
             yield return GetTestCase(BasicData);
             yield return GetTestCase(NullableValueInData);
+            yield return GetTestCase(DateInTable);
         }
 
         private static TestCaseData GetTestCase(Func<IEnumerable<object>> method)
@@ -67,9 +68,20 @@ namespace JsonReaderTests
             };
         }
 
+        private static IEnumerable<object> DateInTable()
+        {
+            yield return "dateValueInTable";
+            yield return new[] { typeof(DateTime), typeof(string), typeof(int) };
+            yield return new List<List<object>>
+            {
+                List(new DateTime(2017, 3, 13), "string1", 322),
+                List(new DateTime(2017, 3, 15), "string2", 834),
+                List(new DateTime(2017, 3, 14), "string3", 32433)
+            };
+        }
 
 
-        //Table test with Int? and string
+        //Date in the table
         //Table test with Enum int and string
         //Table test objects
         //Table tests List of int
