@@ -1,0 +1,22 @@
+{
+  "objectList1": [
+    [ 1 ],
+    [ 2 ],
+    [ 3 ]
+  ],
+  "objectList2": [
+    [ "John", 10 ],
+    [ "Eric", 15 ],
+    [ "Peter", 17 ]
+  ],
+  "objectList3": [
+    [ "John", "Computer", 1020 ],
+    [ "Eric", "Computer", 1025 ],
+    [ "Peter", "Accounts", 1030 ]
+  ],
+  "objectList4": [
+    [ "John", "Computer", 1020, 30 ],
+    [ "Eric", "Computer", 1025, 32 ],
+    [ "Peter", "Accounts", 1030, 29 ]
+  ]
+}

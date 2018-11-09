@@ -7,7 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace JsonReader
 {
-    public class WtJsonReader
+    public class JsonSectionReader
     {
         private Stream CreateStream(string fileName)
         {
@@ -28,7 +28,7 @@ namespace JsonReader
             return stream;
         }
 
-        public JsonSegment Read(string fileName, params object[] tokens)
+        public JsonSection Read(string fileName, params object[] tokens)
         {
             using (var stream = CreateStream(fileName))
             {
@@ -56,7 +56,7 @@ namespace JsonReader
                         else throw new InvalidTokenTypeExcepton(index, token.GetType());
                     }
 
-                    return new JsonSegment(obj);
+                    return new JsonSection(obj);
                 }
             }
         }

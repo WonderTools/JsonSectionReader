@@ -13,7 +13,7 @@ namespace JsonReaderTests
         [TestCaseSource(nameof(GetTestCaseData))]
         public void Test(string searchPath , Type[] tableTypes, List<List<object>> expected)
         {
-            var reader = new WtJsonReader();
+            var reader = new JsonSectionReader();
             var actual = reader.Read("DataTests.json", searchPath)
                 .GetTable(tableTypes);
             actual.Should().BeEquivalentTo(expected);

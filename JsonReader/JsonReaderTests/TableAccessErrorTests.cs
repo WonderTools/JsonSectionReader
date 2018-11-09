@@ -26,7 +26,7 @@ namespace JsonReaderTests
             {
                 try
                 {
-                    var reader = new WtJsonReader();
+                    var reader = new JsonSectionReader();
                     var table = reader.Read("TableAccessErrorTests.json", segment).GetTable(tableTypes);
                 }
                 catch (Exception e)

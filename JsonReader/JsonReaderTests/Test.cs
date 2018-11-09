@@ -9,7 +9,7 @@ namespace JsonReaderTests
         {
             try
             {
-                var reader = new WtJsonReader();
+                var reader = new JsonSectionReader();
                 reader.Read(file, tokens);
             }
             catch (Exception e)

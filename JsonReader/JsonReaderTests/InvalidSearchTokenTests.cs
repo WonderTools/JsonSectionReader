@@ -57,11 +57,4 @@ namespace JsonReaderTests
                 .SetName("6- Array out of bound");
         }
     }
-
-    //Accessing non array by array subscript
-        //Accessing non object by object subscript
-        //Accessing object by wrong subscript
-        //File not found
-        //Multiple file found
-        //Invalid Json file
 }
