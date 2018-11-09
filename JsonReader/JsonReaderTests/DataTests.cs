@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using JsonReader;
+using WonderTools.JsonReader;
 using NUnit.Framework;
 
-namespace JsonReaderTests
+namespace WonderTools.JsonReaderTests
 {
     [TestFixture]
     public class DataTests

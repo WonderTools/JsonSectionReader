@@ -1,10 +1,10 @@
-using JsonReader.Exceptions;
+using WonderTools.JsonReader.Exceptions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
 
-namespace JsonReaderTests
+namespace WonderTools.JsonReaderTests
 {
     [TestFixture()]
     public class InvalidSearchTokenTests

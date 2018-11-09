@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>WonderTools.JsonReaderTests</AssemblyName>
+
+    <RootNamespace>WonderTools.JsonReaderTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

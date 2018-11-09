@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JsonReader.Exceptions
+namespace WonderTools.JsonReader.Exceptions
 {
     public class MultipleResourceFoundException : ApplicationException
     {

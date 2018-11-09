@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JsonReader.Exceptions
+namespace WonderTools.JsonReader.Exceptions
 {
     public class InvalidTokenTypeExcepton : ApplicationException
     {

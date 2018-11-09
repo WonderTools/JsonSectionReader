@@ -1,7 +1,7 @@
 using System;
-using JsonReader;
+using WonderTools.JsonReader;
 
-namespace JsonReaderTests
+namespace WonderTools.JsonReaderTests
 {
     public static class Test
     {

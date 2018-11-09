@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using FluentAssertions;
-using JsonReader;
+using WonderTools.JsonReader;
 using NUnit.Framework;
 
-namespace JsonReaderTests
+namespace WonderTools.JsonReaderTests
 {
     public partial class ObjectListReaderTests
     {

@@ -1,9 +1,9 @@
 using System;
-using JsonReader;
-using JsonReader.Exceptions;
+using WonderTools.JsonReader;
+using WonderTools.JsonReader.Exceptions;
 using NUnit.Framework;
 
-namespace JsonReaderTests
+namespace WonderTools.JsonReaderTests
 {
     [TestFixture]
     public class TableAccessErrorTests
