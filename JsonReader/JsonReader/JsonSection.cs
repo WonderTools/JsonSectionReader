@@ -140,20 +140,8 @@ namespace WonderTools.JsonReader
         }
     }
 
-    //The table has to be completed
-
-    //as dynamic
-    //As Object
-    //As intOrDefault
-    //As float
-    //As bool
-    //As Date
-    //As double
-    //as char
-    //as byte
-    //as long
-    //as decimal
-    //As Ulong
-    //OrDefault
-    //OrNull
+    //The table to be completed up to 12 elements has to be completed
+    //Tests for narrowing sections further has to be added
+    //Tests for reading int, float, double, and so on has to be added.
+    //as dynamic    
 }
