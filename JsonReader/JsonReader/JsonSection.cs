@@ -9,19 +9,19 @@ namespace WonderTools.JsonReader
 {
     public class JsonSection
     {
-        private readonly JToken _token;
-        public JsonSection(JToken token)
+        private readonly JToken _jToken;
+        public JsonSection(JToken jToken)
         {
-            _token = token;
+            _jToken = jToken;
         }
 
-        public JsonSection GetSection(params object[] tokens)
+        public JsonSection GetSection(params object[] searchTokens)
         {
-            var obj = _token;
-            for (var index = 0; index < tokens.Length; index++)
+            var obj = _jToken;
+            for (var index = 0; index < searchTokens.Length; index++)
             {
-                var token = tokens[index];
-                if (token is string x)
+                var searchToken = searchTokens[index];
+                if (searchToken is string x)
                 {
                     if (!(obj is JObject jObject))
                         throw new FilterTokenPropertyNotFoundException(x, index);
@@ -29,13 +29,13 @@ namespace WonderTools.JsonReader
                         throw new FilterTokenPropertyNotFoundException(x, index);
                     obj = obj[x];
                 }
-                else if (token is int y)
+                else if (searchToken is int y)
                 {
                     if (!(obj is JArray) || (y >= obj.Count()))
                         throw new FilterTokenArrayOutOfBoundException(y, index);
                     obj = obj[y];
                 }
-                else throw new InvalidTokenTypeExcepton(index, token.GetType());
+                else throw new InvalidTokenTypeExcepton(index, searchToken.GetType());
             }
             return new JsonSection(obj);
         }
@@ -43,7 +43,7 @@ namespace WonderTools.JsonReader
 
         public List<List<object>> GetTable(params Type[] types)
         {
-            var jArray = _token as JArray;
+            var jArray = _jToken as JArray;
             if (jArray == null) throw new TableNotFoundException();
             List<List<object>> result = new List<List<object>>();
             for (var i = 0; i < jArray.Count; i++)
