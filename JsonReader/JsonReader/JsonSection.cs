@@ -141,7 +141,7 @@ namespace WonderTools.JsonReader
     }
 
     //The table to be completed up to 12 elements has to be completed
-    //Tests for narrowing sections further has to be added
+    //Reading other language (german) UTF8, such file types
     //Tests for reading int, float, double, and so on has to be added.
     //as dynamic    
 }
