@@ -15,6 +15,32 @@ namespace WonderTools.JsonReader
             _token = token;
         }
 
+        public JsonSection GetSection(params object[] tokens)
+        {
+            var obj = _token;
+            for (var index = 0; index < tokens.Length; index++)
+            {
+                var token = tokens[index];
+                if (token is string x)
+                {
+                    if (!(obj is JObject jObject))
+                        throw new FilterTokenPropertyNotFoundException(x, index);
+                    if (!jObject.ContainsKey(x))
+                        throw new FilterTokenPropertyNotFoundException(x, index);
+                    obj = obj[x];
+                }
+                else if (token is int y)
+                {
+                    if (!(obj is JArray) || (y >= obj.Count()))
+                        throw new FilterTokenArrayOutOfBoundException(y, index);
+                    obj = obj[y];
+                }
+                else throw new InvalidTokenTypeExcepton(index, token.GetType());
+            }
+            return new JsonSection(obj);
+        }
+
+
         public List<List<object>> GetTable(params Type[] types)
         {
             var jArray = _token as JArray;

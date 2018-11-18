@@ -36,27 +36,8 @@ namespace WonderTools.JsonReader
                 {
                     var text = reader.ReadToEnd();
                     JToken obj = JObject.Parse(text, new JsonLoadSettings());
-                    for (var index = 0; index < tokens.Length; index++)
-                    {
-                        var token = tokens[index];
-                        if (token is string x)
-                        {
-                            if (!(obj is JObject jObject))
-                                throw new FilterTokenPropertyNotFoundException(x, index);
-                            if(!jObject.ContainsKey(x))
-                                throw new FilterTokenPropertyNotFoundException(x, index);
-                            obj = obj[x];
-                        }
-                        else if (token is int y)
-                        {
-                            if(!(obj is JArray) || (y >= obj.Count()))
-                                throw new FilterTokenArrayOutOfBoundException(y, index);
-                            obj = obj[y];
-                        }
-                        else throw new InvalidTokenTypeExcepton(index, token.GetType());
-                    }
-
-                    return new JsonSection(obj);
+                    var jsonSection = new JsonSection(obj);
+                    return jsonSection.GetSection(tokens);
                 }
             }
         }
