@@ -40,6 +40,11 @@ namespace WonderTools.JsonReader
             return new JsonSection(obj);
         }
 
+        public T GetObject<T>()
+        {
+            var obj = GetData(_jToken, typeof(T));
+            return (T) obj;
+        }
 
         public List<List<object>> GetTable(params Type[] types)
         {
@@ -83,6 +88,7 @@ namespace WonderTools.JsonReader
         {
             var currentType = this.GetType();
             var methodInfo = currentType.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+            //TBD: Exception has to be thrown here
             methodInfo = methodInfo.MakeGenericMethod(type);
             return methodInfo.Invoke(this, new object[] {jToken});
         }        
@@ -134,7 +140,9 @@ namespace WonderTools.JsonReader
         }
     }
 
+    //The table has to be completed
 
+    //as dynamic
     //As Object
     //As intOrDefault
     //As float

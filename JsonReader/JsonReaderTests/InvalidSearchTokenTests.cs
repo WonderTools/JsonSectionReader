@@ -12,7 +12,7 @@ namespace WonderTools.JsonReaderTests
         [TestCaseSource(nameof(GetTestCases))]
         public void ExceptionTest(Type exceptionType, string expectedError, params object[] tokens)
         {
-            var exception = Test.GetExceptionAttemptingToGetJsonSegment("TestData.json", tokens);
+            var exception = Test.GetExceptionAttemptingToGetJsonSegment("InvalidSearchTokenTests.json", tokens);
             Assert.AreEqual(exceptionType, exception.GetType());
             Assert.AreEqual(expectedError, exception.Message);
         }

@@ -13,11 +13,11 @@
   <ItemGroup>
     <None Remove="DataTests.json" />
     <None Remove="Folder\Test.json" />
+    <None Remove="InvalidSearchTokenTests.json" />
     <None Remove="ObjectListReaderTests.json" />
     <None Remove="TableAccessErrorTests.json" />
     <None Remove="TablePartOfArrayTests.json" />
     <None Remove="Test.json" />
-    <None Remove="TestData.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +27,7 @@
     <EmbeddedResource Include="TableAccessErrorTests.json" />
     <EmbeddedResource Include="TablePartOfArrayTests.json" />
     <EmbeddedResource Include="Test.json" />
-    <EmbeddedResource Include="TestData.json" />
+    <EmbeddedResource Include="InvalidSearchTokenTests.json" />
   </ItemGroup>
 
   <ItemGroup>
