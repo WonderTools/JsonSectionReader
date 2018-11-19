@@ -6,22 +6,25 @@ using WonderTools.JsonReader;
 
 namespace WonderTools.JsonReaderTests.ObjectListReaderTests
 {
-    public class D7ObjectListReaderTests : ObjectListReaderTests
+    public class D9ObjectListReaderTests : ObjectListReaderTests
     {
         [Test]
         public void Test()
         {
-            var section = GetSection("objectList7");
-            var result = section.GetTableAsObjectList<Employee, string, string, int, int, DateTime, int, string>((name, department, roll, age, joiningDate, grade, designation) => new Employee()
-                {
-                    Name = name,
-                    Department = department,
-                    Roll = roll,
-                    Age = age,
-                    JoiningDate = joiningDate,
-                    Grade = grade,
-                    Designation = designation,
-                });
+            var section = GetSection("objectList9");
+            var result = section.GetTableAsObjectList<Employee, string, string, int, int, DateTime, int, string, string, string>
+            ((name, department, roll, age, joiningDate, grade, designation, workstationNumber, email) => new Employee()
+            {
+                Name = name,
+                Department = department,
+                Roll = roll,
+                Age = age,
+                JoiningDate = joiningDate,
+                Grade = grade,
+                Designation = designation,
+                WorkStationNumber = workstationNumber,
+                EmailAddress = email,
+            });
             var expected = GetExpected();
             result.Should().BeEquivalentTo(expected);
         }
@@ -35,6 +38,8 @@ namespace WonderTools.JsonReaderTests.ObjectListReaderTests
             public DateTime JoiningDate { get; set; }
             public int Grade { get; set; }
             public string Designation { get; set; }
+            public string WorkStationNumber { get; set; }
+            public string EmailAddress { get; set; }
         }
 
         List<Employee> GetExpected()
@@ -44,17 +49,17 @@ namespace WonderTools.JsonReaderTests.ObjectListReaderTests
                 new Employee()
                 {
                     Name = "John", Department = "Computer", Roll = 1020, Age = 30, JoiningDate = new DateTime(2018,1,1), Grade = 1,
-                    Designation = "Engineer"
+                    Designation = "Engineer", WorkStationNumber = "A123", EmailAddress = "john@xyz.com"
                 },
                 new Employee()
                 {
                     Name ="Eric", Department = "Computer", Roll = 1025, Age = 32, JoiningDate = new DateTime(2018,1,1), Grade = 1,
-                    Designation = "Engineer"
+                    Designation = "Engineer", WorkStationNumber = "A423", EmailAddress = "eric@xyz.com"
                 },
                 new Employee()
                 {
                     Name ="Peter", Department = "Accounts", Roll = 1030, Age = 29, JoiningDate = new DateTime(2018,1,1), Grade = 2,
-                    Designation = "Accountant"
+                    Designation = "Accountant", WorkStationNumber = "A163", EmailAddress = "peter@xyz.com"
                 },
             };
         }
