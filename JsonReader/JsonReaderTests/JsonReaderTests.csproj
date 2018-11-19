@@ -25,7 +25,7 @@
     <EmbeddedResource Include="DataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
     <EmbeddedResource Include="NarrowingSectionsTests.json" />
-    <EmbeddedResource Include="ObjectListReaderTests.json" />
+    <EmbeddedResource Include="ObjectListReaderTests\ObjectListReaderTests.json" />
     <EmbeddedResource Include="TableAccessErrorTests.json" />
     <EmbeddedResource Include="TablePartOfArrayTests.json" />
     <EmbeddedResource Include="Test.json" />

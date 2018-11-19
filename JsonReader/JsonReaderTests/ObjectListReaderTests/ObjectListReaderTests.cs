@@ -1,10 +1,10 @@
-using WonderTools.JsonReader;
 using NUnit.Framework;
+using WonderTools.JsonReader;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonReaderTests.ObjectListReaderTests
 {
     [TestFixture]
-    public partial class ObjectListReaderTests
+    public abstract class ObjectListReaderTests
     {
         protected JsonSection GetSection(string name)
         {
