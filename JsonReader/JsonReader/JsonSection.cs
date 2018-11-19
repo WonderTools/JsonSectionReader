@@ -88,8 +88,9 @@ namespace WonderTools.JsonReader
         {
             var currentType = this.GetType();
             var methodInfo = currentType.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
-            //TBD: Exception has to be thrown here
+            if (methodInfo == null) throw new SomethingWentWrongException(1001);
             methodInfo = methodInfo.MakeGenericMethod(type);
+            
             return methodInfo.Invoke(this, new object[] {jToken});
         }        
 
