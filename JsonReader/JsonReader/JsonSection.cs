@@ -86,7 +86,7 @@ namespace WonderTools.JsonReader
 
         private object GetData(JToken jToken, Type type, string methodName)
         {
-            var currentType = this.GetType();
+            var currentType = GetType();
             var methodInfo = currentType.GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
             if (methodInfo == null) throw new SomethingWentWrongException(1001);
             methodInfo = methodInfo.MakeGenericMethod(type);
@@ -104,9 +104,9 @@ namespace WonderTools.JsonReader
             return jToken.ToObject<T>();
         }
     }
-
-    //The table to be completed up to 12 elements has to be completed
+    
     //Reading other language (german) UTF8, such file types
     //Tests for reading int, float, double, and so on has to be added.
-    //as dynamic    
+    //as dynamic
+    //dynamic table
 }
