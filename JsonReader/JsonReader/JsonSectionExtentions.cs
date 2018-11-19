@@ -77,5 +77,20 @@ namespace WonderTools.JsonReader
                 (T6)x.ElementAt(5), 
                 (T7)x.ElementAt(6))).ToList();
         }
+
+        public static List<TObject> GetTableAsObjectList<TObject, T1, T2, T3, T4, T5, T6, T7, T8>(this JsonSection section,
+            Func<T1, T2, T3, T4, T5, T6, T7, T8, TObject> objectFactory)
+        {
+            var output = section.GetTable(typeof(T1), typeof(T2), typeof(T3), typeof(T4), typeof(T5), typeof(T6), typeof(T7), typeof(T8));
+            return output.Select(x => objectFactory.Invoke(
+                (T1)x.ElementAt(0),
+                (T2)x.ElementAt(1),
+                (T3)x.ElementAt(2),
+                (T4)x.ElementAt(3),
+                (T5)x.ElementAt(4),
+                (T6)x.ElementAt(5),
+                (T7)x.ElementAt(6),
+                (T8)x.ElementAt(7))).ToList();
+        }
     }
 }
