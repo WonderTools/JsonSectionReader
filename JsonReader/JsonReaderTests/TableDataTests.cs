@@ -8,13 +8,13 @@ using NUnit.Framework;
 namespace WonderTools.JsonReaderTests
 {
     [TestFixture]
-    public class DataTests
+    public class TableDataTests
     {
         [TestCaseSource(nameof(GetTestCaseData))]
         public void Test(string searchPath , Type[] tableTypes, List<List<object>> expected)
         {
             var reader = new JsonSectionReader();
-            var actual = reader.Read("DataTests.json").GetSection(searchPath)
+            var actual = reader.Read("TableDataTests.json").GetSection(searchPath)
                 .GetTable(tableTypes);
             actual.Should().BeEquivalentTo(expected);
         }

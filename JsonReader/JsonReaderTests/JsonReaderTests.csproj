@@ -11,18 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="DataTests.json" />
     <None Remove="Folder\Test.json" />
     <None Remove="InvalidSearchTokenTests.json" />
     <None Remove="NarrowingSectionsTests.json" />
     <None Remove="ObjectListReaderTests.json" />
     <None Remove="TableAccessErrorTests.json" />
+    <None Remove="TableDataTests.json" />
     <None Remove="TablePartOfArrayTests.json" />
     <None Remove="Test.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="DataTests.json" />
+    <EmbeddedResource Include="TableDataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
     <EmbeddedResource Include="NarrowingSectionsTests.json" />
     <EmbeddedResource Include="ObjectListReaderTests\ObjectListReaderTests.json" />
