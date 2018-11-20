@@ -11,6 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EncodingTests\FileEncodingTests-Ansi.json" />
+    <None Remove="EncodingTests\FileEncodingTests-Utf8.json" />
+    <None Remove="FileEncodingTests.json" />
     <None Remove="Folder\Test.json" />
     <None Remove="InvalidSearchTokenTests.json" />
     <None Remove="NarrowingSectionsTests.json" />
@@ -22,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="EncodingTests\FileEncodingTests-Ansi.json" />
+    <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8.json" />
+    <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8-bom.json" />
     <EmbeddedResource Include="TableDataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
     <EmbeddedResource Include="NarrowingSectionsTests.json" />
