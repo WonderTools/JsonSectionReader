@@ -14,7 +14,7 @@ namespace WonderTools.JsonReaderTests
         public void Test(string searchPath , Type[] tableTypes, List<List<object>> expected)
         {
             var reader = new JsonSectionReader();
-            var actual = reader.Read("DataTests.json", searchPath)
+            var actual = reader.Read("DataTests.json").GetSection(searchPath)
                 .GetTable(tableTypes);
             actual.Should().BeEquivalentTo(expected);
         }

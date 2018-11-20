@@ -15,7 +15,7 @@ namespace WonderTools.JsonReaderTests
         public void Test(object[] initialFilter, object[] later1Filter, object[] later2Filter)
         {
             var reader = new JsonSectionReader();
-            var actual = reader.Read("NarrowingSectionsTests.json", initialFilter).GetSection(later1Filter).GetSection(later2Filter)
+            var actual = reader.Read("NarrowingSectionsTests.json", Encoding.Default,initialFilter).GetSection(later1Filter).GetSection(later2Filter)
                 .GetTable(typeof(int), typeof(string));
             actual.Should().BeEquivalentTo(GetExpected());
         }

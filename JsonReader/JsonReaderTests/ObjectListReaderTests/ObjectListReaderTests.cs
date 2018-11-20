@@ -8,7 +8,7 @@ namespace WonderTools.JsonReaderTests.ObjectListReaderTests
     {
         protected JsonSection GetSection(string name)
         {
-            return new JsonSectionReader().Read("ObjectListReaderTests.json", name);
+            return new JsonSectionReader().Read("ObjectListReaderTests.json").GetSection(name);
         }
     }
 }

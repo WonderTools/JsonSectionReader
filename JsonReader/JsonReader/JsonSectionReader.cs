@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using WonderTools.JsonReader.Exceptions;
 using Newtonsoft.Json.Linq;
 
@@ -28,11 +29,12 @@ namespace WonderTools.JsonReader
             return stream;
         }
 
-        public JsonSection Read(string fileName, params object[] tokens)
+        public JsonSection Read(string fileName, Encoding encoding = null, params object[] tokens)
         {
+            encoding = encoding ?? Encoding.Default;
             using (var stream = CreateStream(fileName))
             {
-                using (var reader = new StreamReader(stream))
+                using (var reader = new StreamReader(stream, encoding))
                 {
                     var text = reader.ReadToEnd();
                     JToken obj = JObject.Parse(text, new JsonLoadSettings());

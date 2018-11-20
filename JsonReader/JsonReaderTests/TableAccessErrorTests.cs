@@ -27,7 +27,7 @@ namespace WonderTools.JsonReaderTests
                 try
                 {
                     var reader = new JsonSectionReader();
-                    var table = reader.Read("TableAccessErrorTests.json", segment).GetTable(tableTypes);
+                    var table = reader.Read("TableAccessErrorTests.json").GetSection(segment).GetTable(tableTypes);
                 }
                 catch (Exception e)
                 {

@@ -10,7 +10,7 @@ namespace WonderTools.JsonReaderTests
             try
             {
                 var reader = new JsonSectionReader();
-                reader.Read(file, tokens);
+                reader.Read(file).GetSection(tokens);
             }
             catch (Exception e)
             {

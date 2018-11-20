@@ -11,8 +11,8 @@ namespace WonderTools.JsonReaderTests
         public void Tests()
         {
             var reader = new JsonSectionReader();
-            var actual = reader.Read("TablePartOfArrayTests.json", "node1", 1).GetTable(typeof(int), typeof(int));
-            var expected = reader.Read("TablePartOfArrayTests.json", "node2").GetTable(typeof(int), typeof(int));
+            var actual = reader.Read("TablePartOfArrayTests.json").GetSection("node1", 1).GetTable(typeof(int), typeof(int));
+            var expected = reader.Read("TablePartOfArrayTests.json").GetSection("node2").GetTable(typeof(int), typeof(int));
             actual.Should().BeEquivalentTo(expected);
         }
     }
