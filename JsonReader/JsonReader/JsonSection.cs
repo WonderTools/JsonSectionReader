@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using WonderTools.JsonReader.Exceptions;
+using WonderTools.JsonSectionReader.Exceptions;
 using Newtonsoft.Json.Linq;
 
-namespace WonderTools.JsonReader
+namespace WonderTools.JsonSectionReader
 {
     public class JsonSection
     {

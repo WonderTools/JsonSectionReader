@@ -1,5 +1,5 @@
 using System;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonReaderTests
 {
@@ -9,7 +9,7 @@ namespace WonderTools.JsonReaderTests
         {
             try
             {
-                var reader = new JsonSectionReader();
+                var reader = new JsonSectionReader.JsonSectionReader();
                 reader.Read(file).GetSection(tokens);
             }
             catch (Exception e)

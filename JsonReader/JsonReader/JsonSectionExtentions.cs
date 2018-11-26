@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WonderTools.JsonReader
+namespace WonderTools.JsonSectionReader
 {
     public static class JsonSectionExtentions
     {

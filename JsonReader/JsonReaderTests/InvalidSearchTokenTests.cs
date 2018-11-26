@@ -1,4 +1,4 @@
-using WonderTools.JsonReader.Exceptions;
+using WonderTools.JsonSectionReader.Exceptions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 using System;

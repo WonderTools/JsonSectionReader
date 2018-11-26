@@ -1,6 +1,6 @@
 using System;
-using WonderTools.JsonReader;
-using WonderTools.JsonReader.Exceptions;
+using WonderTools.JsonSectionReader;
+using WonderTools.JsonSectionReader.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using NUnit.Framework;

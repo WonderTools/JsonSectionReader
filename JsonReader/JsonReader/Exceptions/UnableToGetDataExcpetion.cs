@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WonderTools.JsonReader.Exceptions
+namespace WonderTools.JsonSectionReader.Exceptions
 {
     public class UnableToGetDataExcpetion : ApplicationException
     {

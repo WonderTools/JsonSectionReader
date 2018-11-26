@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonReaderTests.EncodingTests
 {
@@ -24,7 +24,7 @@ namespace WonderTools.JsonReaderTests.EncodingTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(string fileName, Encoding encoding, List<string> expected)
         {
-            var section = new JsonSectionReader().Read(fileName, encoding).GetSection("table");
+            var section = new JsonSectionReader.JsonSectionReader().Read(fileName, encoding).GetSection("table");
             var result = section.GetTableAsObjectList<string, string>((val) => val);
             result.Should().BeEquivalentTo(expected);
         }

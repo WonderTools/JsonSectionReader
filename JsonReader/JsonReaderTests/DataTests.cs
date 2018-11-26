@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonReaderTests
 {
@@ -24,7 +24,7 @@ namespace WonderTools.JsonReaderTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(string fileName, string sectionName, object expected, Type objectType)
         {
-            var section = new JsonSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
+            var section = new JsonSectionReader.JsonSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
             var result = GetObjectAtSection(section, objectType);
             AssertAreEqual(expected, result);
         }

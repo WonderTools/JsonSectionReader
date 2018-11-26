@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonReaderTests.ObjectListReaderTests
 {
@@ -8,7 +8,7 @@ namespace WonderTools.JsonReaderTests.ObjectListReaderTests
     {
         protected JsonSection GetSection(string name)
         {
-            return new JsonSectionReader().Read("ObjectListReaderTests.json").GetSection(name);
+            return new JsonSectionReader.JsonSectionReader().Read("ObjectListReaderTests.json").GetSection(name);
         }
     }
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using WonderTools.JsonReader.Exceptions;
+using WonderTools.JsonSectionReader.Exceptions;
 using Newtonsoft.Json.Linq;
 
-namespace WonderTools.JsonReader
+namespace WonderTools.JsonSectionReader
 {
     public class JsonSectionReader
     {

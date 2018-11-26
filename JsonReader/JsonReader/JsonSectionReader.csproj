@@ -2,8 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>WonderTools.JsonReader</AssemblyName>
-    <RootNamespace>WonderTools.JsonReader</RootNamespace>
+    <AssemblyName>WonderTools.JsonSectionReader</AssemblyName>
+    <RootNamespace>WonderTools.JsonSectionReader</RootNamespace>
+    <PackageId>WonderTools.JsonSectionReader</PackageId>
+    <Authors>WonderTools</Authors>
+    <Product>WonderTools.JsonSectionReader</Product>
+    <Company>WonderTools</Company>
   </PropertyGroup>
 
   <ItemGroup>

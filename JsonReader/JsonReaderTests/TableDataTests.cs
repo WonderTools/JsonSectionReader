@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 using NUnit.Framework;
 
 namespace WonderTools.JsonReaderTests
@@ -13,7 +13,7 @@ namespace WonderTools.JsonReaderTests
         [TestCaseSource(nameof(GetTestCaseData))]
         public void Test(string searchPath , Type[] tableTypes, List<List<object>> expected)
         {
-            var reader = new JsonSectionReader();
+            var reader = new JsonSectionReader.JsonSectionReader();
             var actual = reader.Read("TableDataTests.json").GetSection(searchPath)
                 .GetTable(tableTypes);
             actual.Should().BeEquivalentTo(expected);

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using NUnit.Framework;
-using WonderTools.JsonReader;
+using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonReaderTests.ObjectListReaderTests
 {
