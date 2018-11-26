@@ -3,7 +3,7 @@ using WonderTools.JsonSectionReader;
 using WonderTools.JsonSectionReader.Exceptions;
 using NUnit.Framework;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonSectionReaderTests
 {
     [TestFixture]
     public class TableAccessErrorTests
@@ -26,7 +26,7 @@ namespace WonderTools.JsonReaderTests
             {
                 try
                 {
-                    var reader = new JsonSectionReader.JsonSectionReader();
+                    var reader = new JSectionReader();
                     var table = reader.Read("TableAccessErrorTests.json").GetSection(segment).GetTable(tableTypes);
                 }
                 catch (Exception e)

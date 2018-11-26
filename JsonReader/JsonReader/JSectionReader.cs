@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace WonderTools.JsonSectionReader
 {
-    public class JsonSectionReader
+    public class JSectionReader
     {
         private Stream CreateStream(string fileName)
         {
@@ -42,7 +42,7 @@ namespace WonderTools.JsonSectionReader
             return names;
         }
 
-        public JsonSection Read(string fileName, Encoding encoding = null, params object[] tokens)
+        public JSection Read(string fileName, Encoding encoding = null, params object[] tokens)
         {
             encoding = encoding ?? Encoding.Default;
             using (var stream = CreateStream(fileName))
@@ -51,7 +51,7 @@ namespace WonderTools.JsonSectionReader
                 {
                     var text = reader.ReadToEnd();
                     JToken obj = JObject.Parse(text, new JsonLoadSettings());
-                    var jsonSection = new JsonSection(obj);
+                    var jsonSection = new JSection(obj);
                     return jsonSection.GetSection(tokens);
                 }
             }

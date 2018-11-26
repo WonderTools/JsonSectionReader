@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonSectionReader", "JsonReader\JsonSectionReader.csproj", "{53A6E9E6-AEEC-41F2-9DD3-E20AF50855C0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonReaderTests", "JsonReaderTests\JsonReaderTests.csproj", "{7F5F422B-A5CB-4E60-B3AF-1533726E7A09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonSectionReaderTests", "JsonReaderTests\JsonSectionReaderTests.csproj", "{7F5F422B-A5CB-4E60-B3AF-1533726E7A09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

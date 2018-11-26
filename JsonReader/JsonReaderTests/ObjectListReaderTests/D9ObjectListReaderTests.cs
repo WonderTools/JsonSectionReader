@@ -4,7 +4,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using WonderTools.JsonSectionReader;
 
-namespace WonderTools.JsonReaderTests.ObjectListReaderTests
+namespace WonderTools.JsonSectionReaderTests.ObjectListReaderTests
 {
     public class D9ObjectListReaderTests : ObjectListReaderTests
     {

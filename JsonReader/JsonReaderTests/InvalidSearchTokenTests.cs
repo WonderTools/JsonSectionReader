@@ -4,7 +4,7 @@ using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonSectionReaderTests
 {
     [TestFixture()]
     public class InvalidSearchTokenTests

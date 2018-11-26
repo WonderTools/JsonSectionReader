@@ -6,7 +6,7 @@ using NUnit.Framework;
 using NUnit.Framework.Internal;
 using WonderTools.JsonSectionReader;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonSectionReaderTests
 {
     [TestFixture]
     public class NarrowingSectionsTests
@@ -14,7 +14,7 @@ namespace WonderTools.JsonReaderTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(object[] initialFilter, object[] later1Filter, object[] later2Filter)
         {
-            var reader = new JsonSectionReader.JsonSectionReader();
+            var reader = new JSectionReader();
             var actual = reader.Read("NarrowingSectionsTests.json", Encoding.Default,initialFilter).GetSection(later1Filter).GetSection(later2Filter)
                 .GetTable(typeof(int), typeof(string));
             actual.Should().BeEquivalentTo(GetExpected());

@@ -1,14 +1,14 @@
 using NUnit.Framework;
 using WonderTools.JsonSectionReader;
 
-namespace WonderTools.JsonReaderTests.ObjectListReaderTests
+namespace WonderTools.JsonSectionReaderTests.ObjectListReaderTests
 {
     [TestFixture]
     public abstract class ObjectListReaderTests
     {
-        protected JsonSection GetSection(string name)
+        protected JSection GetSection(string name)
         {
-            return new JsonSectionReader.JsonSectionReader().Read("ObjectListReaderTests.json").GetSection(name);
+            return new JSectionReader().Read("ObjectListReaderTests.json").GetSection(name);
         }
     }
 }

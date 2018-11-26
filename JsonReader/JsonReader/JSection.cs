@@ -7,15 +7,15 @@ using Newtonsoft.Json.Linq;
 
 namespace WonderTools.JsonSectionReader
 {
-    public class JsonSection
+    public class JSection
     {
         private readonly JToken _jToken;
-        public JsonSection(JToken jToken)
+        public JSection(JToken jToken)
         {
             _jToken = jToken;
         }
 
-        public JsonSection GetSection(params object[] searchTokens)
+        public JSection GetSection(params object[] searchTokens)
         {
             var obj = _jToken;
             for (var index = 0; index < searchTokens.Length; index++)
@@ -37,7 +37,7 @@ namespace WonderTools.JsonSectionReader
                 }
                 else throw new InvalidTokenTypeExcepton(index, searchToken.GetType());
             }
-            return new JsonSection(obj);
+            return new JSection(obj);
         }
 
         public T GetObject<T>()

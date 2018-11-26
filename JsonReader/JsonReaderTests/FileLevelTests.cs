@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using NUnit.Framework;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonSectionReaderTests
 {
     [TestFixture]
     public class FileLevelTests

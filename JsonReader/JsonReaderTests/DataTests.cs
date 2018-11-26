@@ -6,7 +6,7 @@ using FluentAssertions;
 using NUnit.Framework;
 using WonderTools.JsonSectionReader;
 
-namespace WonderTools.JsonReaderTests
+namespace WonderTools.JsonSectionReaderTests
 {
     public class DataTests
     {
@@ -24,7 +24,7 @@ namespace WonderTools.JsonReaderTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(string fileName, string sectionName, object expected, Type objectType)
         {
-            var section = new JsonSectionReader.JsonSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
+            var section = new JsonSectionReader.JSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
             var result = GetObjectAtSection(section, objectType);
             AssertAreEqual(expected, result);
         }
@@ -37,14 +37,14 @@ namespace WonderTools.JsonReaderTests
             else Assert.AreEqual(expected, actual);
         }
 
-        private object GetObjectAtSection(JsonSection section, Type type)
+        private object GetObjectAtSection(JSection section, Type type)
         {
             var genericMethodInfo = this.GetType().GetMethod(nameof(Read), BindingFlags.Static | BindingFlags.NonPublic);
             var methodInfo = genericMethodInfo.MakeGenericMethod(type);
             return methodInfo.Invoke(null, new object[] {section});
         }
 
-        private static object Read<T>(JsonSection section)
+        private static object Read<T>(JSection section)
         {
             var result = section.GetObject<T>();
             return result;
