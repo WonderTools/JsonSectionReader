@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DataTests.json" />
     <None Remove="EncodingTests\FileEncodingTests-Ansi.json" />
     <None Remove="EncodingTests\FileEncodingTests-Utf8.json" />
     <None Remove="FileEncodingTests.json" />
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="DataTests.json" />
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Ansi.json" />
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8.json" />
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8-bom.json" />
