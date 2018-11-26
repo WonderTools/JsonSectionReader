@@ -20,6 +20,9 @@ namespace WonderTools.JsonReader
             var names = listOfList.SelectMany(x => x, (c, s) => s).ToList();
             names.Sort();
 
+            names = FilterIncompleteNames(names, fileName);
+
+
             if (names.Count > 1) throw new MultipleResourceFoundException(fileName, string.Join(",",names));
             if (names.Count == 0) throw new EmbeddedResourceNotFoundException(fileName);
 
@@ -27,6 +30,16 @@ namespace WonderTools.JsonReader
             var assembly = assemblies.First(x => x.GetManifestResourceNames().Any(y => y.EndsWith(fileName)));
             var stream = assembly.GetManifestResourceStream(fullFileName);
             return stream;
+        }
+
+        private static List<string> FilterIncompleteNames(List<string> names, string fileName)
+        {
+            if (names.Count > 1)
+            {
+                var names1 = names.Where(x => x.EndsWith("." + fileName)).ToList();
+                if (names1.Count > 0) return names1;
+            }
+            return names;
         }
 
         public JsonSection Read(string fileName, Encoding encoding = null, params object[] tokens)

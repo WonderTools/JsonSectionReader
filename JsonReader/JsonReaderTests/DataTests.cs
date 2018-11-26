@@ -10,7 +10,7 @@ namespace WonderTools.JsonReaderTests
     {
         public static IEnumerable<TestCaseData> TestCases()
         {
-            yield return new TestCaseData(".DataTests.json", "number", 34850924).SetName("Reading a number as int");
+            yield return new TestCaseData("DataTests.json", "number", 34850924).SetName("Reading a number as int");
         }
 
         [TestCaseSource(nameof(TestCases))]
