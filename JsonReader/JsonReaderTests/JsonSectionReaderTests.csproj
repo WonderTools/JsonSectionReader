@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>WonderTools.JsonReaderTests</AssemblyName>
+    <AssemblyName>WonderTools.JsonSectionReaderTests</AssemblyName>
 
-    <RootNamespace>WonderTools.JsonReaderTests</RootNamespace>
+    <RootNamespace>WonderTools.JsonSectionReaderTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

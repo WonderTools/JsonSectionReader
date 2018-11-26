@@ -17,9 +17,6 @@ namespace WonderTools.JsonSectionReaderTests
                 return e;
             }
             throw new Exception();
-
-
-
         }
     }
 }
