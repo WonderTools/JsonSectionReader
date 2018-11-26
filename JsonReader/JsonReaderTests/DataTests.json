@@ -1,3 +1,6 @@
 {
-  "number" :  34850924
+  "number": 34850924,
+  "numberString": "34850924",
+  "string": "hello-how-are-you?",
+  "date" : "23-march-2017" 
 }
