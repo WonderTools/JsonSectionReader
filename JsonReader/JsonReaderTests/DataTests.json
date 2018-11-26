@@ -2,5 +2,7 @@
   "number": 34850924,
   "numberString": "34850924",
   "string": "hello-how-are-you?",
-  "date" : "23-march-2017" 
+  "date": "23-march-2017",
+  "float": 5.44321234,
+  "person" :  { "name" :  "John", "age" :  43 } 
 }
