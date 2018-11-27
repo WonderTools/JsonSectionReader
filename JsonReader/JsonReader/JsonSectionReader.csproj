@@ -8,6 +8,18 @@
     <Authors>WonderTools</Authors>
     <Product>WonderTools.JsonSectionReader</Product>
     <Company>WonderTools</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/WonderTools/JsonSectionReader/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/WonderTools/JsonSectionReader</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WonderTools/JsonSectionReader</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>json, read, sections, embedded, resource, testcases, unit, test,</PackageTags>
+    <PackageReleaseNotes>Initial version of Json Section Reader</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2018 WonderTools</Copyright>
+    <Description>A tool designed to facilitate data managment in unit testing.
+The tool makes JSON data organized in embedded resource easy to access.
+It provides numberous ways to extract a section of data, and deserialize data.</Description>
   </PropertyGroup>
 
   <ItemGroup>

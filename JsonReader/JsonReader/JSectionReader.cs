@@ -42,6 +42,13 @@ namespace WonderTools.JsonSectionReader
             return names;
         }
 
+        public static JSection Section(string fileName, Encoding encoding = null, params object[] tokens)
+        {
+            var reader = new JSectionReader();
+            return reader.Read(fileName, encoding, tokens);
+        }
+
+
         public JSection Read(string fileName, Encoding encoding = null, params object[] tokens)
         {
             encoding = encoding ?? Encoding.Default;

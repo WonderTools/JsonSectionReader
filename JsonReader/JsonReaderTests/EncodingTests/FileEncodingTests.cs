@@ -24,7 +24,7 @@ namespace WonderTools.JsonSectionReaderTests.EncodingTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(string fileName, Encoding encoding, List<string> expected)
         {
-            var section = new JSectionReader().Read(fileName, encoding).GetSection("table");
+            var section = JSectionReader.Section(fileName, encoding).GetSection("table");
             var result = section.GetTableAsObjectList<string, string>((val) => val);
             result.Should().BeEquivalentTo(expected);
         }
