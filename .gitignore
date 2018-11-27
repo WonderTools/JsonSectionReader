@@ -1,5 +1,6 @@
 JsonReader/.vs/
-JsonReader/JsonReader/bin/
-JsonReader/JsonReader/obj/
-JsonReader/JsonReaderTests/bin/Debug/
-JsonReader/JsonReaderTests/obj/
+JsonReader/JsonSectionReader/bin/
+JsonReader/JsonSectionReader/obj/
+JsonReader/JsonSectionReaderTests/bin/Debug/
+JsonReader/JsonSectionReaderTests/obj/
+
