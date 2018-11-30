@@ -12,17 +12,17 @@ namespace WonderTools.JsonSectionReaderTests
     {
         public static IEnumerable<TestCaseData> TestCases()
         {
-            yield return new TestCaseData("DataTests.json", "number", 34850924, typeof(int)).SetName("Reading a number as int");
-            yield return new TestCaseData("DataTests.json", "numberString", 34850924, typeof(int)).SetName("Reading a number-string as int");
-            yield return new TestCaseData("DataTests.json", "string", "hello-how-are-you?", typeof(string)).SetName("Reading a string");
-            yield return new TestCaseData("DataTests.json", "date", new DateTime(2017, 3, 23), typeof(DateTime)).SetName("Reading a date");
-            yield return new TestCaseData("DataTests.json", "float", (float)5.44321234, typeof(float)).SetName("Reading a float");
-            yield return new TestCaseData("DataTests.json", "float", (double)5.44321234, typeof(double)).SetName("Reading a double");
-            yield return new TestCaseData("DataTests.json", "person", new Person(){ Name = "John", Age = 43}, typeof(Person)).SetName("Reading an object");
+            yield return new TestCaseData("1-Reading a number as int", "DataTests.json", "number", 34850924, typeof(int));
+            yield return new TestCaseData("2-Reading a number-string as int","DataTests.json", "numberString", 34850924, typeof(int));
+            yield return new TestCaseData("3-Reading a string","DataTests.json", "string", "hello-how-are-you?", typeof(string));
+            yield return new TestCaseData("4-Reading a date","DataTests.json", "date", new DateTime(2017, 3, 23), typeof(DateTime));
+            yield return new TestCaseData("5-Reading a float","DataTests.json", "float", (float)5.44321234, typeof(float));
+            yield return new TestCaseData("6-Reading a double", "DataTests.json", "float", (double)5.44321234, typeof(double));
+            yield return new TestCaseData("7-Reading an object","DataTests.json", "person", new Person(){ Name = "John", Age = 43}, typeof(Person));
         }
 
         [TestCaseSource(nameof(TestCases))]
-        public void Test(string fileName, string sectionName, object expected, Type objectType)
+        public void Test(string testCaseName, string fileName, string sectionName, object expected, Type objectType)
         {
             var section = new JsonSectionReader.JSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
             var result = GetObjectAtSection(section, objectType);

@@ -12,7 +12,7 @@ namespace WonderTools.JsonSectionReaderTests
     public class NarrowingSectionsTests
     {
         [TestCaseSource(nameof(TestCases))]
-        public void Test(object[] initialFilter, object[] later1Filter, object[] later2Filter)
+        public void Test(string testCaseName, object[] initialFilter, object[] later1Filter, object[] later2Filter)
         {
             var reader = new JSectionReader();
             var actual = reader.Read("NarrowingSectionsTests.json", Encoding.Default,initialFilter).GetSection(later1Filter).GetSection(later2Filter)
@@ -22,10 +22,10 @@ namespace WonderTools.JsonSectionReaderTests
 
         public static IEnumerable<TestCaseData> TestCases()
         {
-            yield return new TestCaseData(new object[0], new object[]{"test1"}, new object[0]).SetName("Initial filter empty - later filter filled");
-            yield return new TestCaseData(new object[0], new object[] { "test2", 1 }, new object[0]).SetName("Initial filter empty - later filter filled ends with array");
-            yield return new TestCaseData(new object[]{ "test2" }, new object[] { 1 }, new object[0]).SetName("Initial and later filter");
-            yield return new TestCaseData(new object[]{}, new object[] { "test2" }, new object[]{1}).SetName("later filter 1 and 2");
+            yield return new TestCaseData("1. Initial filter empty - later filter filled",new object[0], new object[]{"test1"}, new object[0]);
+            yield return new TestCaseData("2. Initial filter empty - later filter filled ends with array",new object[0], new object[] { "test2", 1 }, new object[0]);
+            yield return new TestCaseData("3. Initial and later filter",new object[]{ "test2" }, new object[] { 1 }, new object[0]);
+            yield return new TestCaseData("4. later filter 1 and 2",new object[]{}, new object[] { "test2" }, new object[]{1});
         }
 
         private List<List<object>> GetExpected()
