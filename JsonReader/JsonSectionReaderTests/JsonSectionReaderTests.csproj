@@ -19,6 +19,7 @@
     <None Remove="InvalidSearchTokenTests.json" />
     <None Remove="NarrowingSectionsTests.json" />
     <None Remove="ObjectListReaderTests.json" />
+    <None Remove="ReadJsonTests.json" />
     <None Remove="TableAccessErrorTests.json" />
     <None Remove="TableDataTests.json" />
     <None Remove="TablePartOfArrayTests.json" />
@@ -30,6 +31,7 @@
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Ansi.json" />
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8.json" />
     <EmbeddedResource Include="EncodingTests\FileEncodingTests-Utf8-bom.json" />
+    <EmbeddedResource Include="ReadJsonTests.json" />
     <EmbeddedResource Include="TableDataTests.json" />
     <EmbeddedResource Include="Folder\Test.json" />
     <EmbeddedResource Include="NarrowingSectionsTests.json" />

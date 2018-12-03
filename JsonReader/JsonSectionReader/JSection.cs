@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
 using WonderTools.JsonSectionReader.Exceptions;
 using Newtonsoft.Json.Linq;
 
@@ -102,6 +103,12 @@ namespace WonderTools.JsonSectionReader
         private object GetObjectBasedOnType<T>(JToken jToken)
         {
             return jToken.ToObject<T>();
+        }
+
+        public string GetJson()
+        {
+            if (_jToken.Type == JTokenType.String) return _jToken.Value<string>();
+            return _jToken.ToString(Formatting.None);
         }
     }
     

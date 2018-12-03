@@ -1,0 +1,54 @@
+{
+  "simpleObject": {
+    "value": {
+      "one": "two",
+      "three": "four"
+    },
+    "serializedValue": "{\"one\":\"two\",\"three\":\"four\"}"
+  },
+  "integer": {
+    "value": 5,
+    "serializedValue": "5"
+  },
+  "date1": {
+    "value": "23-Mar-2017",
+    "serializedValue": "23-Mar-2017"
+  },
+  "date2": {
+    "value": "3-4-2017",
+    "serializedValue": "3-4-2017"
+  },
+  "simpleString": {
+    "value": "one two three",
+    "serializedValue": "one two three"
+  },
+  "array": {
+    "value": [ 3, 4, 5, 6, 7, 0, "one x" ],
+    "serializedValue": "[3,4,5,6,7,0,\"one x\"]"
+  },
+  "complicatedObject": {
+    "value": {
+      "glossary": {
+        "title": "example glossary",
+        "GlossDiv": {
+          "title": "S",
+          "GlossList": {
+            "GlossEntry": {
+              "ID": "SGML",
+              "SortAs": "SGML",
+              "GlossTerm": "Standard Generalized Markup Language",
+              "Acronym": "SGML",
+              "Abbrev": "ISO 8879:1986",
+              "GlossDef": {
+                "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                "GlossSeeAlso": [ "GML", "XML" ]
+              },
+              "GlossSee": "markup"
+            }
+          }
+        }
+      }
+    },
+    "serializedValue": "{\"glossary\":{\"title\":\"example glossary\",\"GlossDiv\":{\"title\":\"S\",\"GlossList\":{\"GlossEntry\":{\"ID\":\"SGML\",\"SortAs\":\"SGML\",\"GlossTerm\":\"Standard Generalized Markup Language\",\"Acronym\":\"SGML\",\"Abbrev\":\"ISO 8879:1986\",\"GlossDef\":{\"para\":\"A meta-markup language, used to create markup languages such as DocBook.\",\"GlossSeeAlso\":[\"GML\",\"XML\"]},\"GlossSee\":\"markup\"}}}}}"
+  }
+}

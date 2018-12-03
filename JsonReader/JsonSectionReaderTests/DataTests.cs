@@ -8,6 +8,7 @@ using WonderTools.JsonSectionReader;
 
 namespace WonderTools.JsonSectionReaderTests
 {
+    [TestFixture]
     public class DataTests
     {
         public static IEnumerable<TestCaseData> TestCases()
@@ -24,7 +25,7 @@ namespace WonderTools.JsonSectionReaderTests
         [TestCaseSource(nameof(TestCases))]
         public void Test(string testCaseName, string fileName, string sectionName, object expected, Type objectType)
         {
-            var section = new JsonSectionReader.JSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
+            var section = new JSectionReader().Read(fileName, Encoding.UTF8).GetSection(sectionName);
             var result = GetObjectAtSection(section, objectType);
             AssertAreEqual(expected, result);
         }

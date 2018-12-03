@@ -41,7 +41,7 @@ namespace WonderTools.JsonSectionReaderTests
             var path = (string)objects[0];
             var types = (Type[]) objects[1];
             var expected = (List<List<object>>) objects[2];
-            return new TestCaseData(path, types, expected).SetName(path);
+            return new TestCaseData(path, types, expected);
         }
 
         private static IEnumerable<object> BasicData()
