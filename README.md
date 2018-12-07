@@ -20,5 +20,10 @@ The test data must be easily accessible from the test case. Having the test data
 #### 5. Supports for data in other languages (Non-ASCII characters)
 #### 6. Supports tabular representation of data (similar to data from database)
 
-
+## Steps to use the tool
+#### 1. Add reference to the nuget package "WonderTools.JsonSectionReader"
+#### 2. Add a json file to your project say "TestData.json"
+#### 3. Make this json file as an embedded resource.
+#### 4. Add the json data that you would like it to be available
+#### 5. Call the JsonSectionReader methods to get a section of the data and to deserialize it
 
