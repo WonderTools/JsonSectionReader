@@ -25,5 +25,13 @@ The test data must be easily accessible from the test case. Having the test data
 #### 2. Add a json file to your project say "TestData.json"
 #### 3. Make this json file as an embedded resource.
 #### 4. Add the json data that you would like it to be available
-#### 5. Call the JsonSectionReader methods to get a section of the data and to deserialize it
+#### 5. Call the JsonSectionReader methods to get a section of the data and to deserialize it. (Explained with examples below)
+
+## Example
+```json
+{
+  name : "Nachiappan",
+  age : 32,
+}
+```
 
