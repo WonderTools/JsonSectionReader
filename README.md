@@ -29,15 +29,19 @@ The test data must be easily accessible from the test case. Having the test data
 
 ## Example
 
-### 1. Sectioning Example
+### 1. Sectioning Example1
 TestData.json
 ```json
-{
-  name : "Nachiappan",
-  age : 32,
+"Person1" : {
+  "name" : "John",
+  "age" : 32,
 }
 
-```cs
-
 ```
+
+```cs
+  string name = JsonSectionReader.Section("TestData.json").GetSection("Person1", "name").GetObject<string>();
+```
+
+
 
