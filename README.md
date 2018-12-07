@@ -89,3 +89,11 @@ TestData.json
 ```cs
   string name = JsonSectionReader.Section("TestData.json").GetSection("persons", 1, "name").GetObject<string>();
 ```
+
+### 4. Object Example
+
+
+### 5. List Example
+
+
+### 6. Table Example
