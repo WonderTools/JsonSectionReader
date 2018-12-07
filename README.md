@@ -28,10 +28,16 @@ The test data must be easily accessible from the test case. Having the test data
 #### 5. Call the JsonSectionReader methods to get a section of the data and to deserialize it. (Explained with examples below)
 
 ## Example
+
+### 1. Sectioning Example
+TestData.json
 ```json
 {
   name : "Nachiappan",
   age : 32,
 }
+
+```cs
+
 ```
 
