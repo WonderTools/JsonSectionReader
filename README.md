@@ -13,12 +13,12 @@ The test data has lot of information about the tests, and it's really important 
 The test data must be easily accessible from the test case. Having the test data packaged in another entity would make such as a file or data base would increase the probability of errors such as "File not found", "Invalid Connection String", etc... To make the unit testing more reliable the test data and test code has to be packaged together, and test data must be quickly accessible from test code. The tool facilites this by letting your test data be stored in the same library as embedded resource.  
 
 ## Features of the tool
-### 1. Reads full or sections of JSON file
-### 2. Reads JSON file stored as embedded resource. 
-### 3. Make deserializion of JSON to .Net objects easy
-### 4. Capable of reading various encoding formats such as UTF8, UTF32, etc...
-### 5. Supports for data in other languages (Non-ASCII characters)
-### 6. Supports tabular representation of data (similar to data from database)
+#### 1. Reads full or sections of JSON file
+#### 2. Reads JSON file stored as embedded resource. 
+#### 3. Make deserializion of JSON to .Net objects easy
+#### 4. Capable of reading various encoding formats such as UTF8, UTF32, etc...
+#### 5. Supports for data in other languages (Non-ASCII characters)
+#### 6. Supports tabular representation of data (similar to data from database)
 
 
 
