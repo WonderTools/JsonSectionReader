@@ -29,10 +29,10 @@ The test data must be easily accessible from the test case. Having the test data
 
 ## Example
 
-### 1. Sectioning Example1
+### 1. Sectioning Example 1
 TestData.json
 ```json
-"Person1" : {
+"person1" : {
   "name" : "John",
   "age" : 32,
 }
@@ -40,8 +40,52 @@ TestData.json
 ```
 
 ```cs
-  string name = JsonSectionReader.Section("TestData.json").GetSection("Person1", "name").GetObject<string>();
+  string name = JsonSectionReader.Section("TestData.json").GetSection("person1", "name").GetObject<string>();
 ```
 
 
+### 2. Sectioning Example 2
+TestData.json
+```json
+"persons" : [
+  {
+    "name" : "John",
+    "age" : 32,
+  },
+  { 
+    "name" : "nash",
+    "age" : 86,
+  }
+]
 
+```
+
+```cs
+  string name = JsonSectionReader.Section("TestData.json").GetSection("persons", 1, "name").GetObject<string>();
+```
+
+### 3. File Name Example
+TestData.json
+```json
+"persons" : [
+  {
+    "name" : "John",
+    "age" : 32,
+  },
+  { 
+    "name" : "nash",
+    "age" : 86,
+  }
+]
+```
+TestData.json
+```json
+{
+  "Integer" : 32,
+  "Color" : "Red"
+}
+```
+
+```cs
+  string name = JsonSectionReader.Section("TestData.json").GetSection("persons", 1, "name").GetObject<string>();
+```
