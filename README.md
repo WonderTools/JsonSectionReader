@@ -130,9 +130,9 @@ JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
 1. There are two embedded resources named Example4FileDiscovery.json, so specifing file name as "Example4FileDiscovery.json" will be ambigious and would result in an exception.
 2. The file named has to be more specifically mentioned to avoid ambigiouty.
 3. The valid names for identifying the file are
-..* JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
-..* Example4FileDiscovery.Boo.Example4FileDiscovery.json
-..* Boo.Example4FileDiscovery.json
+    * JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
+    * Example4FileDiscovery.Boo.Example4FileDiscovery.json
+    * Boo.Example4FileDiscovery.json
 4. All of the above c sharp statements return the string "elephant"
 
 ### 4. Object Example
