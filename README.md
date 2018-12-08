@@ -153,7 +153,7 @@ JSectionReader.Section("Example5ReadingObject.json").GetSection("person").GetObj
 #### Remark
 1. The statement returns a Person object with name as "richard" and Age as 22.
 
-### 4. Example6ReadingList
+### 6. Example6ReadingList
 #### Data
 Example6ReadingList.json
 ```json
@@ -168,7 +168,7 @@ JSectionReader.Section("Example6ReadingList.json").GetSection("numbers").GetObje
 #### Remark
 1. The statment returns a List<int> with 5, 4, 3, 2, 1 in it.
 
-### 4. Example7ReadingAsJson
+### 7. Example7ReadingAsJson
 #### Data
 Example7ReadingAsJson.json
 ```json
@@ -190,7 +190,7 @@ Example7ReadingAsJson.json
 new JSectionReader().Read("Example7ReadingAsJson.json").GetSection("employees" , 1).GetJson();
 ```
 #### Remark
-1. The statement returns a string "{\"name\":\"Nash\",\"id\":31433}"
+1. The statement returns a string **{"name":"Nash","id":31433}**
 
 ### 4. Object Example
 #### Data
