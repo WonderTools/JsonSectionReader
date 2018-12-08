@@ -26,6 +26,7 @@ The test data must be easily accessible from the test case. Having the test data
 3. Make this json file as an embedded resource.
 4. Add the json data that you would like it to be available
 5. Call the JsonSectionReader methods to get a section of the data and to deserialize it. (Explained with examples below)
+6. The examples shown below are available in the github repository https://github.com/WonderTools/JsonSectionReaderUsage
 
 ## Example
 
