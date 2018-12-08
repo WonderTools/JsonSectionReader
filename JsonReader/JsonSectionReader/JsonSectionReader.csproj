@@ -15,12 +15,21 @@
     <RepositoryUrl>https://github.com/WonderTools/JsonSectionReader</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>json, read, sections, embedded, resource, testcases, unit, test,</PackageTags>
-    <PackageReleaseNotes>Added support for reading a section as string</PackageReleaseNotes>
+    <PackageReleaseNotes>
+1.0.2
+Fixed the bug of needing to reference Newtonsoft.Json explicitly in the client
+Update the usage documentation
+
+1.0.1
+Added support for reading a section as a json string
+
+1.0.0
+Initial version of Json Section Reader</PackageReleaseNotes>
     <Copyright>Copyright (c) 2018 WonderTools</Copyright>
     <Description>A tool designed to facilitate data managment in unit testing.
 The tool makes JSON data organized in embedded resource easy to access.
 It provides numberous ways to extract a section of data, and deserialize data.</Description>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
