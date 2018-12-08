@@ -30,6 +30,7 @@ The test data must be easily accessible from the test case. Having the test data
 ## Example
 
 ### 1. Example1Sectioning
+#### Data
 Example1Sectioning.json
 ```json
 {
@@ -38,7 +39,7 @@ Example1Sectioning.json
 }
 
 ```
-
+#### Code
 ```cs
   JSectionReader.Section("Example1Sectioning.json").GetSection("name").GetObject<string>();
 ```
@@ -50,10 +51,8 @@ Example1Sectioning.json
 ```cs
   new JSectionReader().Read("Example1Sectioning.json", Encoding.Default, "name").GetObject<string>();
 ```
-
+#### Remarks
 All of the above lines return string "john".
-
-
 
 ### 2. Sectioning Example 2
 TestData.json
