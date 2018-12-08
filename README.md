@@ -135,6 +135,63 @@ JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
     * Boo.Example4FileDiscovery.json
 4. All of the above c sharp statements return the string "elephant"
 
+### 5. Example5ReadingObject
+#### Data
+Example5ReadingObject.json
+```json
+{
+  "person" : {
+    "name": "richard",
+    "age" :  22
+  }
+}
+```
+#### Code
+```cs
+JSectionReader.Section("Example5ReadingObject.json").GetSection("person").GetObject<Person>();
+```
+#### Remark
+1. The statement returns a Person object with name as "richard" and Age as 22.
+
+### 4. Example6ReadingList
+#### Data
+Example6ReadingList.json
+```json
+{
+  "numbers" : [5,4,3,2,1] 
+}
+```
+#### Code
+```cs
+JSectionReader.Section("Example6ReadingList.json").GetSection("numbers").GetObject<List<int>>();
+```
+#### Remark
+1. The statment returns a List<int> with 5, 4, 3, 2, 1 in it.
+
+### 4. Example7ReadingAsJson
+#### Data
+Example7ReadingAsJson.json
+```json
+{
+  "employees": [
+    {
+      "name": "John",
+      "id": 31432
+    },
+    {
+      "name": "Nash",
+      "id": 31433
+    }
+  ] 
+}
+```
+#### Code
+```cs
+new JSectionReader().Read("Example7ReadingAsJson.json").GetSection("employees" , 1).GetJson();
+```
+#### Remark
+1. The statement returns a string "{\"name\":\"Nash\",\"id\":31433}"
+
 ### 4. Object Example
 #### Data
 .json
@@ -144,6 +201,68 @@ JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
 ```cs
 ```
 #### Remark
+
+
+
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
+
+
+
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
+
+
+
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
+
+
+
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
+
+
+
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
+
+
 
 ### 4. Object Example
 #### Data
