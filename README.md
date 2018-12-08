@@ -1,5 +1,15 @@
 # JsonSectionReader - A tool to manage data in unit testing
 
+Code maitained in github
+https://github.com/WonderTools/JsonSectionReader
+
+Product released in NuGet
+https://www.nuget.org/packages/WonderTools.JsonSectionReader/
+
+Sample usage
+https://github.com/WonderTools/JsonSectionReaderUsage
+
+
 ## Opinions that shaped tool
 While unit testing, the amount of test data could become voluminious and could easily make the test code less readable. Having the data separated from code imporves the readability of the tests in my opinion. Yes... This is an opinionated tool, and the opinions that shape this tool are listed below.
 
