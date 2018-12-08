@@ -193,6 +193,7 @@ new JSectionReader().Read("Example7ReadingAsJson.json").GetSection("employees" ,
 1. The statement returns a string **{"name":"Nash","id":31433}**
 
 ### 8. Example8ListOfList
+Reading a table as list of list of objects
 #### Data
 Example8ListOfList.json
 ```json
@@ -224,6 +225,7 @@ The statement returns a List<List<object>> as shown above
 
 
 ### 9. Example9ListOfObject
+Reading a table as list of user defined objects
 #### Data
 Example9ListOfObject.json
 ```json
