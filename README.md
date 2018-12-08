@@ -54,48 +54,46 @@ Example1Sectioning.json
 #### Remarks
 All of the above lines return string "john".
 
-### 2. Sectioning Example 2
-TestData.json
-```json
-"persons" : [
-  {
-    "name" : "John",
-    "age" : 32,
-  },
-  { 
-    "name" : "nash",
-    "age" : 86,
-  }
-]
-
-```
-
-```cs
-  string name = JsonSectionReader.Section("TestData.json").GetSection("persons", 1, "name").GetObject<string>();
-```
-
-### 3. File Name Example
-TestData.json
-```json
-"persons" : [
-  {
-    "name" : "John",
-    "age" : 32,
-  },
-  { 
-    "name" : "nash",
-    "age" : 86,
-  }
-]
-```
-Example1Sectioning.json
+### 2. Example2Sectioning
+#### Data
+Example2Sectioning.json
 ```json
 {
-  "Integer" : 32,
-  "Color" : "Red"
+  "employees": [
+    {
+      "name": "philip",
+      "age": 28
+    },
+    {
+      "name": "richard",
+      "age": 31
+    }
+  ] 
 }
 ```
+#### Code
+```cs
+  JSectionReader.Section("Example2Sectioning.json").GetSection("employees", 1, "name").GetObject<string>();
+```
+#### Remarks
+The statement return string "richard"
 
+### 3. Example3Encoding
+#### Data
+Example3Encoding.json
+```json
+{
+  "words" : [ "good", "bad", "Mädchen" ]
+}
+```
+#### Code
+```cs
+    JSectionReader.Section("Example3Encoding.json").GetSection("words", 2).GetObject<string>();
+```
+
+#### Remarks
+The encoding of the file is set to UTF-8 (using Notepad++)
+The statement return the string "Mädchen"
 
 ### 4. Object Example
 
