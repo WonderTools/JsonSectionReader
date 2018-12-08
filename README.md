@@ -192,77 +192,35 @@ new JSectionReader().Read("Example7ReadingAsJson.json").GetSection("employees" ,
 #### Remark
 1. The statement returns a string **{"name":"Nash","id":31433}**
 
-### 4. Object Example
+### 8. Example8ListOfList
 #### Data
-.json
+Example8ListOfList.json
 ```json
+{
+  "data": [
+    [ 1, "Monday", "Morning" ],
+    [ 2, "Monday", "Afternoon" ],
+    [ 3, "Tuesday", "Morning" ],
+    [ 4, "Tuesday", "Afternoon" ]
+  ] 
+}
 ```
 #### Code
 ```cs
+    new JSectionReader().Read("Example8ListOfList.json").GetSection("data")
+        .GetTable(typeof(int), typeof(string), typeof(string))
 ```
 #### Remark
-
-
-
-### 4. Object Example
-#### Data
-.json
-```json
-```
-#### Code
+1. The statement returns a List<List<object>> as shown below
 ```cs
+    new List<List<object>>()
+    {
+        new List<object>() {1, "Monday", "Morning"},
+        new List<object>() {2, "Monday", "Afternoon"},
+        new List<object>() {3, "Tuesday", "Morning"},
+        new List<object>() {4, "Tuesday", "Afternoon"},
+    };
 ```
-#### Remark
-
-
-
-### 4. Object Example
-#### Data
-.json
-```json
-```
-#### Code
-```cs
-```
-#### Remark
-
-
-
-### 4. Object Example
-#### Data
-.json
-```json
-```
-#### Code
-```cs
-```
-#### Remark
-
-
-
-### 4. Object Example
-#### Data
-.json
-```json
-```
-#### Code
-```cs
-```
-#### Remark
-
-
-
-### 4. Object Example
-#### Data
-.json
-```json
-```
-#### Code
-```cs
-```
-#### Remark
-
-
 
 ### 4. Object Example
 #### Data
