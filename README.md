@@ -92,13 +92,65 @@ Example3Encoding.json
 ```
 
 #### Remarks
-The encoding of the file is set to UTF-8 (using Notepad++)
-The statement return the string "Mädchen"
+1. The encoding of the file is set to UTF-8 (using Notepad++)
+2. The statement return the string "Mädchen"
+
+### 4. Example4FileDiscovery
+#### Data
+JsonSectionReaderUsage.Example4FileDiscovery.Foo.Example4FileDiscovery.json
+```json
+{
+  "animal": "lion"
+}
+```
+JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
+```json
+{
+  "animal" :  "elephant" 
+}
+```
+#### Code
+```cs
+    JSectionReader
+        .Section("JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json")
+        .GetSection("animal").GetObject<string>();
+```
+```cs
+    JSectionReader
+        .Section("Example4FileDiscovery.Boo.Example4FileDiscovery.json")
+        .GetSection("animal").GetObject<string>();
+```
+
+```cs
+    JSectionReader
+        .Section("Boo.Example4FileDiscovery.json")
+        .GetSection("animal").GetObject<string>();
+```
+#### Remark
+1. There are two embedded resources named Example4FileDiscovery.json, so specifing file name as "Example4FileDiscovery.json" will be ambigious and would result in an exception.
+2. The file named has to be more specifically mentioned to avoid ambigiouty.
+3. The valid names for identifying the file are
+..* JsonSectionReaderUsage.Example4FileDiscovery.Boo.Example4FileDiscovery.json
+..* Example4FileDiscovery.Boo.Example4FileDiscovery.json
+..* Boo.Example4FileDiscovery.json
+4. All of the above c sharp statements return the string "elephant"
 
 ### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
 
-
-### 5. List Example
-
-
-### 6. Table Example
+### 4. Object Example
+#### Data
+.json
+```json
+```
+#### Code
+```cs
+```
+#### Remark
