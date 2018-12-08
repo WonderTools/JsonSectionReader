@@ -211,7 +211,6 @@ Example8ListOfList.json
         .GetTable(typeof(int), typeof(string), typeof(string))
 ```
 #### Remark
-1. The statement returns a List<List<object>> as shown below
 ```cs
     new List<List<object>>()
     {
@@ -221,13 +220,40 @@ Example8ListOfList.json
         new List<object>() {4, "Tuesday", "Afternoon"},
     };
 ```
+The statement returns a List<List<object>> as shown above
 
-### 4. Object Example
+
+### 9. Example9ListOfObject
 #### Data
-.json
+Example9ListOfObject.json
 ```json
+{
+  "data": [
+    [ 2432, "John", 32 ],
+    [ 2222, "Nash", 33 ],
+    [ 3421, "Peter", 33 ]
+  ] 
+}
+
 ```
 #### Code
 ```cs
+    new JSectionReader().Read("Example9ListOfObject.json").GetSection("data")
+        .GetTableAsObjectList<Employee, int, string, int>(
+                (id, name, age) => new Employee()
+                {
+                    Id = id,
+                    Name = name,
+                    Age = age,
+                });
 ```
 #### Remark
+```cs
+  new List<Employee>()
+    {
+        new Employee(){Id =2432,Name ="John", Age = 32},
+        new Employee(){Id =2222,Name ="Nash", Age = 33},
+        new Employee(){Id =3421,Name ="Peter", Age = 33},
+    };
+```
+The statement returns a list of employees as shown above
